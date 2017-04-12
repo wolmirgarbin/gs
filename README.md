@@ -2,6 +2,7 @@
 A finalidade deste aplicativo é de gerar códigos fontes para agilizar o desenvolvimento de aplicativos.
 
 Em sua versão inicial é possivel gerar os seguintes códigos:
+
     Entidade JPA;
     Spring JpaRepository;
     Spring Interface Service;
