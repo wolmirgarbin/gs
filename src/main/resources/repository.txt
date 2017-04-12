@@ -1,0 +1,11 @@
+package br.com.viasoft.repository.impl;
+
+import br.com.viasoft.entity.${className};
+import br.com.viasoft.framework.BaseRepository;
+import br.com.viasoft.repository.${className}Repository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class ${className}RepositoryImpl extends BaseRepository<${className}> implements ${prefixInterface}${className}Repository {
+
+}

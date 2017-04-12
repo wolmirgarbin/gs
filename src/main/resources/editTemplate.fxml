@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="935.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.viasoft.controller.EditTemplateController">
+   <children>
+      <JFXTextArea fx:id="txtCodigoFonte" layoutX="20.0" layoutY="74.0" prefHeight="385.0" prefWidth="896.0" />
+      <JFXComboBox fx:id="btnOpcoes" layoutX="149.0" layoutY="19.0" />
+      <Label layoutX="20.0" layoutY="30.0" text="Editante template " />
+   </children>
+</Pane>

@@ -1,0 +1,9 @@
+package br.com.viasoft.data;
+
+import br.com.viasoft.entity.${className};
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+public interface ${className}Data extends JpaRepository<${className}, Long> {
+
+}

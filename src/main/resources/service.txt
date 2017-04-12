@@ -1,0 +1,30 @@
+package br.com.viasoft.service.impl;
+
+import br.com.viasoft.data.${className}Data;
+import br.com.viasoft.entity.${className}
+import br.com.viasoft.framework.BaseService;
+import br.com.viasoft.framework.ICrudRepository;
+import br.com.viasoft.repository.${className}Repository;
+import br.com.viasoft.service.${className}Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ${className}ServiceImpl extends BaseService<${className}, Long> implements ${prefixInterface}${className}Service {
+
+    @Autowired private ${className}Data ${classNameLower}Data;
+
+    @Autowired private ${className}Repository ${classNameLower}Repository;
+
+    @Override
+    protected JpaRepository<${className}, Long> getData() {
+        return ${classNameLower}Data;
+    }
+
+    @Override
+    protected ICrudRepository<${className}> getRepository() {
+        return ${classNameLower}Repository;
+    }
+
+}

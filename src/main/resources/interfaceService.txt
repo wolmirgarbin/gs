@@ -1,0 +1,8 @@
+package br.com.viasoft.service;
+
+import br.com.viasoft.entity.${className};
+import br.com.viasoft.framework.ICrudService;
+
+public interface ${prefixInterface}${className}Service extends ICrudService<${className}, Long> {
+
+}

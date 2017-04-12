@@ -1,0 +1,45 @@
+package br.com.viasoft.controller;
+
+import br.com.viasoft.entity.${className};
+import br.com.viasoft.framework.BaseCrudController;
+import br.com.viasoft.framework.ICrudService;
+import br.com.viasoft.service.I${className}Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+
+import java.util.List;
+
+@Controller
+@Scope("view")
+public class ${className}Controller extends BaseCrudController<${className}, Long> {
+
+    public static final String PRIVILEGIO = "cadastro-${classNameLower}";
+
+    @Autowired private I${className}Service ${classNameLower}Service;
+
+    @Override
+    protected String getPrivilegio() {
+        return PRIVILEGIO;
+    }
+
+    @Override
+    protected ICrudService<${className}, Long> getService() {
+        return ${classNameLower}Service;
+    }
+
+    @Override
+    public String getFormPage() {
+        return "/pages/${classNameLower}/${classNameLower}Form.xhtml";
+    }
+
+    @Override
+    public String getSearchPage() {
+        return "/pages/${classNameLower}/${classNameLower}Search.xhtml";
+    }
+
+    public List<${className}> filterSearch() {
+        return ${classNameLower}Service.findAll();
+    }
+
+}

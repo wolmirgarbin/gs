@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:viasoft="http://java.sun.com/jsf/composite/viasoft">
+
+    <h:head>
+        <title>
+            <h:outputText value="#{form.pesquisa}"/>
+        </title>
+    </h:head>
+
+    <h:body>
+
+        <f:view>
+
+            <h:form id="form">
+
+                <viasoft:title label="#{form.pesquisa}" controller="#{@{controller}}" renderedButtonPage="#{!@{controller}.disabledBtnIncluir}"/>
+
+                <p:panel collapsed="false" header="#{form.filtros}" id="panel" toggleable="true" styleClass="panelFiltros">
+                    <viasoft:tableFilter controller="#{@{controller}}" findUpdate=":form:table" resetUpdate="@form" />
+                </p:panel>
+
+                <p:messages id="messages"/>
+
+                <p:panel header="#{form.panelSearchLabel}">
+                    <p:dataTable id="table" var="item" value="#{@{controller}.lsEntity}" paginator="true" rows="10" sortBy="#{item.id}" styleClass="view" paginatorPosition="bottom"
+                            widgetVar="table" emptyMessage="#{msg.table_empty}" rowsPerPageTemplate="10,30,50" currentPageReportTemplate="({currentPage} #{form.de} {totalPages})"
+                            paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
+
+                        @{jsfDataTableColumns}
+
+                        <p:column styleClass="tableActions" exportable="false">
+                            <viasoft:tableActions visibleEdit="#{!@{controller}.disabledBtnAlterar}"
+                                              visibleView="#{!@{controller}.disabledBtnVisualizar}"
+                                              visibleRemove="#{!@{controller}.disabledBtnExcluir}"
+                                              controller="#{@{controller}}" />
+                        </p:column>
+                    </p:dataTable>
+                </p:panel>
+
+                <viasoft:title position="bottom" controller="#{@{controller}}" renderedButtonPage="#{!@{controller}.disabledBtnIncluir}">
+                    <viasoft:buttonExportar fileName="tiposDeEmpresas" />
+                </viasoft:title>
+
+                <viasoft:confirmExclusao controller="#{@{controller}}" update=":form:table, :form:messages"/>
+
+                <p:dialog id="view" appendTo="@(body)" header="#{form.visualizacao}" visible="false" modal="true" resizable="false" draggable="true" closable="true" widgetVar="view" width="500" styleClass="view">
+                    <h:panelGrid columns="1" styleClass="vs-panelGrid-info">
+                        @{jsfDialogViewGrid}
+                    </h:panelGrid>
+                    <viasoft:footer-buttons dialogWidgetVar="view"/>
+                </p:dialog>
+
+            </h:form>
+
+        </f:view>
+
+    </h:body>
+
+</html>

@@ -1,0 +1,8 @@
+package br.com.viasoft.repository;
+
+import br.com.viasoft.entity.${className};
+import br.com.viasoft.framework.ICrudRepository;
+
+public interface ${prefixInterface}${className}Repository extends ICrudRepository<${className}> {
+
+}
