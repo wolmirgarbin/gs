@@ -1,5 +1,5 @@
-# gs
-A finalidade deste aplicativo é de gerar códigos fontes para agilizar o desenvolvimento de aplicativos.
+# Gerador de Código
+A finalidade deste aplicativo é de gerar códigos fontes para agilizar o desenvolvimento de aplicações java.
 
 Em sua versão inicial é possivel gerar os seguintes códigos:
 
@@ -17,6 +17,22 @@ Em sua versão inicial é possivel gerar os seguintes códigos:
     Tela de pesquisa em JSF;
 
 Aplicativo foi desenvolvido em JavaFX onde é suportado em todos sistemas operacionais.
+
+
+# How to use
+Para utilizar o aplicativo é muito fácil, veja:
+
+1) Clone do projeto
+    - Primeiro faça um clone do projeto, para isso pode utilizar o comando git clone <repos>
+    
+2) Executar o projeto
+    - Após clonar ou baixar o projeto, acesse a pasta ../gs/ e execute pelo terminal para rodar a aplicação
+        - mvn install exec:java
+
+
+Para rodar a aplicação dessa forma precisa ter o maven instalado em sua maquina, caso preferir pode abrir em sua IDE e executar a classe main normalmente.
+
+
 
 Para utilizar o App basta ter o Java 8 instalado.
 
